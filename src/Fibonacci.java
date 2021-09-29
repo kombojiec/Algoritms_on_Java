@@ -1,13 +1,6 @@
 import java.util.Scanner;
 
 public class Fibonacci {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int value = sc.nextInt();
-        System.out.println(fibboLinear(value));
-        System.out.println(fibboRecursive(value));
-
-    }
 
     static int fibboLinear(int n) {
         int res = 0, tmp, x = 1, y = 1;
