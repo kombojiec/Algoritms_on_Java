@@ -1,5 +1,6 @@
 package Stack;
 
+import Stack.Tasks.Brackets;
 import Stack.Tasks.Reverse;
 
 import java.io.BufferedReader;
@@ -9,9 +10,8 @@ import java.io.InputStreamReader;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        Reverse reverse = new Reverse();
-
-        System.out.println(reverse.reverse(getString()));
+        String str = "Some ({ new })[] sting";
+        Brackets.check(str);
 
     }
 
