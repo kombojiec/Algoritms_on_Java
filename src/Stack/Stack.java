@@ -1,6 +1,6 @@
 package Stack;
 
-// Класс, имитирующий работу стека
+/* Класс, имитирующий работу стека на базе массива */
 public class Stack <T>{
     private T[] stack;
     private int size;
