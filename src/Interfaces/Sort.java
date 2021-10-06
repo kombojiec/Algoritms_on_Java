@@ -38,22 +38,6 @@ public class Sort {
 
     /*Сортировка методом вставки / Insertion sort*/
     public static void insertionSort(int[] arr){
-//        int tmp;
-//        int position = 1;
-//
-//        for (int i = 0; i < arr.length -1; i++) {
-//            for (int j = position; j > 0  ; j--) {
-//                tmp = arr[j];
-//                if(arr[j] < arr[j-1]){
-//                    arr[j] = arr[j-1];
-//                    arr[j-1] = tmp;
-//                }else{
-//                    break;
-//                }
-//            }
-//            ++position;
-//        }
-
         int tmp, position;
         for (int i = 1; i < arr.length; i++) {
             tmp = arr[i];
@@ -65,5 +49,53 @@ public class Sort {
             arr[position] = tmp;
         }
     }
+
+
+    /* Сортировка методом Шелла */
+//    public  static void shellSort(int[] arr){
+//        int tmp;
+//        int step = 1;
+//        int length = arr.length;
+//
+//        while(step <= length){
+//            step = step * 3 + 1;
+//        }
+//        while(step > 0){
+//            for (int i = step; i < length; i++) {
+//                tmp = arr[i];
+//                int j = i;
+//                while(j > step-1 && arr[j-step] >= tmp){
+//                    arr[j] = arr[j-step];
+//                    j -= step;
+//                }
+//                arr[j] = tmp;
+//            }
+//            step = (step-1) / 3;
+//        }
+//    }
+
+
+    public  static void shellSort(int[] arr){
+        int length = arr.length;
+        int step = 1;
+        int tmp;
+
+        while(step < length)
+            step = step * 3 + 1;
+
+        while( step > 0){
+            for (int i = step; i < length; i++) {
+                tmp = arr[i];
+                int j = i;
+                while (j >= step && arr[j-step] > tmp){
+                    arr[j] = arr[j-step];
+                    j -= step;
+                }
+                arr[j] = tmp;
+            }
+            step = (step - 1) / 3;
+        }
+    }
+
 
 }
